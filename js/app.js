@@ -3,6 +3,8 @@ function iniciarApp() {
     const selectCategorias = document.querySelector('#categorias');
     selectCategorias.addEventListener('change', seleccionarCategoria)
 
+    const resultado = document.querySelector('#resultado');
+
     obtenerCategorias();
 
     function obtenerCategorias() {
@@ -52,8 +54,25 @@ function iniciarApp() {
             const recetaCardBody = document.createElement('div');
             recetaCardBody.classList.add('card-body');
 
-            console.log(recetaImagen);
-            
+            const recetaHeading = document.createElement('h3');
+            recetaHeading.classList.add('card-title', 'mb-3');
+            recetaHeading.textContent = strMeal;
+
+            const recetaBtn = document.createElement('button');
+            recetaBtn.classList.add('btn', 'btn-danger', 'w-100');
+            recetaBtn.textContent = 'Ver Receta';
+
+            //Inyectar en el codigo HTML
+
+            recetaCardBody.appendChild(recetaHeading);
+            recetaCardBody.appendChild(recetaBtn);
+
+            recetaCard.appendChild(recetaImagen);
+            recetaCard.appendChild(recetaCardBody);
+
+            recetaContenedor.appendChild(recetaCard);
+
+            resultado.appendChild(recetaContenedor);
         })
         
     }
