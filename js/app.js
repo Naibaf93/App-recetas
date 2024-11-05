@@ -68,6 +68,11 @@ function iniciarApp() {
             const recetaBtn = document.createElement('button');
             recetaBtn.classList.add('btn', 'btn-danger', 'w-100');
             recetaBtn.textContent = 'Ver Receta';
+            //recetaBtn.dataset.bsTarget = "#modal";
+            //recetaBtn.dataset.bsToggle = "modal";
+            recetaBtn.onclick = function(){
+                seleccionarReceta(idMeal)
+            }
 
             //Inyectar en el codigo HTML
 
@@ -81,6 +86,11 @@ function iniciarApp() {
 
             resultado.appendChild(recetaContenedor);
         })
+        
+    }
+
+    function seleccionarReceta(id) {
+        const url = `https://themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
         
     }
 
