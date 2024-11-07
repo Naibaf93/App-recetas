@@ -158,7 +158,7 @@ function iniciarApp() {
 
     function limpiarHTML(selector) {
         while(selector.firstChild) {
-            selector.removeChild(resultado.firstChild);
+            selector.removeChild(selector.firstChild);
         }
     }
 }
